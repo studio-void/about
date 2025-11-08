@@ -3,6 +3,7 @@ import type { PropsWithChildren } from 'react';
 
 import { Footer } from './footer';
 import { Header } from './header';
+import { LangSwitch } from './lang-switch';
 
 export const Layout: React.FC<
   PropsWithChildren<{ disableHeaderHeight?: boolean }>
@@ -23,7 +24,7 @@ export const Layout: React.FC<
   }, []);
 
   return (
-    <div className="min-h-screen w-full bg-neutral-50 dark:bg-neutral-950">
+    <div className="min-h-screen w-full bg-background text-foreground">
       <Header ref={headerRef} />
       <main
         style={{ paddingTop: disableHeaderHeight ? 0 : headerHeight }}
@@ -31,6 +32,7 @@ export const Layout: React.FC<
       >
         {children}
       </main>
+      <LangSwitch />
       <Footer />
     </div>
   );
