@@ -3,7 +3,6 @@ import type { PropsWithChildren } from 'react';
 
 import { Footer } from './footer';
 import { Header } from './header';
-import { LangSwitch } from './lang-switch';
 
 export const Layout: React.FC<
   PropsWithChildren<{ disableHeaderHeight?: boolean }>
@@ -32,7 +31,6 @@ export const Layout: React.FC<
       >
         {children}
       </main>
-      <LangSwitch />
       <Footer />
     </div>
   );

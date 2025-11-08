@@ -31,7 +31,7 @@ export const Header = forwardRef<
           {t('team')}
         </Link>
         <a
-          href="mailto:invest@vo.id"
+          href="mailto:ceo@wevoid.com"
           className="inline-block rounded-md bg-primary text-primary-foreground px-3 py-1.5 text-sm font-medium hover:opacity-90"
         >
           {t('invest')}

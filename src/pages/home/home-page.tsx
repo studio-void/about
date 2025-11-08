@@ -23,7 +23,7 @@ export const HomePage: React.FC = () => {
             <Button variant="default" className="px-6 py-3">
               {t('requestDeck')}
             </Button>
-            <a href="mailto:invest@vo.id" className="inline-block">
+            <a href="mailto:ceo@wevoid.com" className="inline-block">
               <Button variant="outline" className="px-6 py-3">
                 {t('contact')}
               </Button>

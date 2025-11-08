@@ -1,3 +1,10 @@
+import {
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMail,
+  IconWorld,
+} from '@tabler/icons-react';
+
 import { Layout } from '@/components';
 import { useTranslation } from '@/i18n';
 
@@ -12,8 +19,9 @@ interface TeamMember {
   descKo: string;
   descEn: string;
   email?: string;
-  linkedin?: string;
   github?: string;
+  website?: string;
+  linkedin?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -29,8 +37,10 @@ const teamMembers: TeamMember[] = [
       '제품 전략과 투자 유치를 이끌며, 프론트엔드와 데브옵스까지 넓은 영역을 커버합니다. 팀의 비전과 실행을 연결하는 역할을 합니다.',
     descEn:
       'Leads product strategy and fundraising, covering everything from frontend to DevOps. Connects team vision with execution.',
-    email: 'jeonghoon@vo.id',
-    github: 'https://github.com/jeonghoon',
+    email: 'ceo@wevoid.com',
+    github: 'https://github.com/hoony6134',
+    website: 'https://me.scian.xyz',
+    linkedin: 'https://www.linkedin.com/in/hoony6134',
   },
   {
     nameKo: '최재원',
@@ -44,7 +54,7 @@ const teamMembers: TeamMember[] = [
       '비즈니스 개발과 마케팅 전략을 담당하며, 투자자 및 파트너 관계를 구축합니다. 브랜드와 시장 포지셔닝을 책임집니다.',
     descEn:
       'Drives business development and marketing strategy, building investor and partner relationships. Owns brand and market positioning.',
-    email: 'charles@vo.id',
+    email: 'choijw1202@wevoid.com',
   },
   {
     nameKo: '류현승',
@@ -58,8 +68,10 @@ const teamMembers: TeamMember[] = [
       '풀스택 개발과 시스템 아키텍처를 설계하며, 디자인 시스템까지 직접 구현합니다. 기술팀의 방향성을 제시합니다.',
     descEn:
       'Designs full-stack architecture and implements design systems. Sets technical direction for the engineering team.',
-    email: 'hyunseung@vo.id',
-    github: 'https://github.com/hyunseung',
+    email: 'rhseungg@wevoid.com',
+    github: 'https://github.com/rhseung',
+    website: 'https://rhseung.me',
+    linkedin: 'https://www.linkedin.com/in/hyunseung-ryu-a340b02a7',
   },
   {
     nameKo: '박예은',
@@ -73,7 +85,7 @@ const teamMembers: TeamMember[] = [
       '사용자 경험 설계와 프론트엔드 구현을 주도하며, 제품의 첫인상을 만듭니다. 고객의 목소리를 제품에 반영합니다.',
     descEn:
       'Leads UX design and frontend implementation, crafting the first impression of products. Translates customer voice into features.',
-    email: 'yeeun@vo.id',
+    email: 'yetwin05@gm.gist.ac.kr',
   },
   {
     nameKo: '장민서',
@@ -87,7 +99,7 @@ const teamMembers: TeamMember[] = [
       '임베디드 시스템과 하드웨어 프로토타입을 설계하고 제작합니다. 물리적 제품과 소프트웨어를 연결하는 핵심 인력입니다.',
     descEn:
       'Designs and builds embedded systems and hardware prototypes. Bridges physical products with software.',
-    email: 'minseo@vo.id',
+    email: 'minseo0210@gm.gist.ac.kr',
   },
   {
     nameKo: '강감찬',
@@ -101,8 +113,7 @@ const teamMembers: TeamMember[] = [
       '머신러닝 모델을 연구하고 프로덕션 환경에 배포합니다. 데이터 기반 인사이트를 제품에 녹여냅니다.',
     descEn:
       'Researches and deploys machine learning models to production. Integrates data-driven insights into products.',
-    email: 'gamchan@vo.id',
-    github: 'https://github.com/gamchan',
+    email: 'gamchan11@gm.gist.ac.kr',
   },
   {
     nameKo: '김도현',
@@ -116,7 +127,8 @@ const teamMembers: TeamMember[] = [
       '백엔드 서비스와 AI 파이프라인을 구축하고, 인프라를 안정적으로 운영합니다. 시스템의 확장성과 신뢰성을 책임집니다.',
     descEn:
       'Builds backend services and AI pipelines, ensuring stable infrastructure. Responsible for scalability and reliability.',
-    email: 'dohyun@vo.id',
+    email: 'dohyun06@gm.gist.ac.kr',
+    github: 'https://github.com/dohyun06',
   },
 ];
 
@@ -183,7 +195,7 @@ export const TeamMainPage: React.FC = () => {
             {t('openToPartners')}
           </p>
           <a
-            href="mailto:invest@vo.id"
+            href="mailto:ceo@wevoid.com"
             className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
           >
             {t('requestDeck')}
@@ -227,13 +239,14 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
         {desc}
       </p>
 
-      <div className="flex items-center gap-3 text-sm">
+      <div className="flex items-center gap-3">
         {member.email && (
           <a
             href={`mailto:${member.email}`}
-            className="text-neutral-600 dark:text-neutral-400 hover:underline"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+            aria-label="Email"
           >
-            Email
+            <IconMail size={20} />
           </a>
         )}
         {member.github && (
@@ -241,9 +254,10 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
             href={member.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-600 dark:text-neutral-400 hover:underline"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+            aria-label="GitHub"
           >
-            GitHub
+            <IconBrandGithub size={20} />
           </a>
         )}
         {member.linkedin && (
@@ -251,9 +265,21 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
             href={member.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-neutral-600 dark:text-neutral-400 hover:underline"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+            aria-label="LinkedIn"
           >
-            LinkedIn
+            <IconBrandLinkedin size={20} />
+          </a>
+        )}
+        {member.website && (
+          <a
+            href={member.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+            aria-label="Website"
+          >
+            <IconWorld size={20} />
           </a>
         )}
       </div>
