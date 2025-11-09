@@ -8,14 +8,14 @@ export const HomePage: React.FC = () => {
   return (
     <Layout disableHeaderHeight>
       <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Background gradient animation */}
-        <div className="absolute inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 animate-gradient" />
-
         {/* Floating particles */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-delayed" />
-          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-pulse-slow" />
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl animate-particle-1" />
+          <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-500/15 rounded-full blur-3xl animate-particle-2" />
+          <div className="absolute bottom-1/3 left-1/3 w-72 h-72 bg-pink-500/20 rounded-full blur-3xl animate-particle-3" />
+          <div className="absolute top-1/2 right-1/2 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-particle-4" />
+          <div className="absolute bottom-1/4 left-1/2 w-56 h-56 bg-violet-500/25 rounded-full blur-3xl animate-particle-5" />
+          <div className="absolute top-2/3 right-1/3 w-64 h-64 bg-indigo-500/15 rounded-full blur-3xl animate-particle-6" />
         </div>
 
         <div className="mx-auto w-full max-w-5xl text-center px-4 relative z-10">

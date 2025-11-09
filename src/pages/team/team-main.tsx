@@ -153,64 +153,76 @@ export const TeamMainPage: React.FC = () => {
 
   return (
     <Layout disableHeaderHeight>
-      <div className="mx-auto max-w-5xl py-24 px-4">
-        <header className="mb-8">
-          <h1 className="text-4xl font-extrabold">{t('teamVoids')}</h1>
-          <p className="text-neutral-600 dark:text-neutral-400 mt-2">
-            {t('teamIntro')}
-          </p>
-        </header>
+      <div className="relative">
+        {/* Background gradient animation */}
+        <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 animate-gradient -z-10" />
 
-        {/* Leadership */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">{t('leadership')}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {grouped.leadership.map((m) => (
-              <MemberCard key={m.nameEn} member={m} lang={lang} />
-            ))}
-          </div>
-        </section>
+        {/* Floating particles */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-float-delayed" />
+          <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-primary/3 rounded-full blur-3xl animate-pulse-slow" />
+        </div>
 
-        {/* Engineering */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">{t('engineering')}</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {grouped.engineering.map((m) => (
-              <MemberCard key={m.nameEn} member={m} lang={lang} />
-            ))}
-          </div>
-        </section>
+        <div className="mx-auto max-w-5xl py-24 px-4 relative">
+          <header className="mb-8 animate-fade-in-up">
+            <h1 className="text-4xl font-extrabold">{t('teamVoids')}</h1>
+            <p className="text-neutral-600 dark:text-neutral-400 mt-2">
+              {t('teamIntro')}
+            </p>
+          </header>
 
-        {/* Customer Experience */}
-        {grouped.customerExperience.length > 0 && (
-          <section className="mb-12">
-            <h2 className="text-2xl font-semibold mb-6">
-              {t('customerExperience')}
-            </h2>
+          {/* Leadership */}
+          <section className="mb-12 animate-fade-in-up animation-delay-100">
+            <h2 className="text-2xl font-semibold mb-6">{t('leadership')}</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              {grouped.customerExperience.map((m) => (
+              {grouped.leadership.map((m) => (
                 <MemberCard key={m.nameEn} member={m} lang={lang} />
               ))}
             </div>
           </section>
-        )}
 
-        <Card>
-          <CardHeader>
-            <CardTitle>{t('investorRelations')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-              {t('openToPartners')}
-            </p>
-            <a
-              href="mailto:ceo@wevoid.com"
-              className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
-            >
-              {t('requestDeck')}
-            </a>
-          </CardContent>
-        </Card>
+          {/* Engineering */}
+          <section className="mb-12 animate-fade-in-up animation-delay-200">
+            <h2 className="text-2xl font-semibold mb-6">{t('engineering')}</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {grouped.engineering.map((m) => (
+                <MemberCard key={m.nameEn} member={m} lang={lang} />
+              ))}
+            </div>
+          </section>
+
+          {/* Customer Experience */}
+          {grouped.customerExperience.length > 0 && (
+            <section className="mb-12 animate-fade-in-up animation-delay-300">
+              <h2 className="text-2xl font-semibold mb-6">
+                {t('customerExperience')}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {grouped.customerExperience.map((m) => (
+                  <MemberCard key={m.nameEn} member={m} lang={lang} />
+                ))}
+              </div>
+            </section>
+          )}
+
+          <Card className="animate-fade-in-up animation-delay-400">
+            <CardHeader>
+              <CardTitle>{t('investorRelations')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+                {t('openToPartners')}
+              </p>
+              <a
+                href="mailto:ceo@wevoid.com"
+                className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
+              >
+                {t('requestDeck')}
+              </a>
+            </CardContent>
+          </Card>
+        </div>
       </div>
     </Layout>
   );

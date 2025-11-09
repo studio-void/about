@@ -210,6 +210,122 @@ code {
   }
 }
 
+@keyframes particle-1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-20px, -80px) scale(0.9);
+    opacity: 0.25;
+  }
+  75% {
+    transform: translate(-50px, -40px) scale(1.05);
+    opacity: 0.2;
+  }
+}
+
+@keyframes particle-2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.15;
+  }
+  33% {
+    transform: translate(-60px, 50px) scale(1.2) rotate(120deg);
+    opacity: 0.25;
+  }
+  66% {
+    transform: translate(40px, 80px) scale(0.85) rotate(240deg);
+    opacity: 0.2;
+  }
+}
+
+@keyframes particle-3 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.2;
+  }
+  20% {
+    transform: translate(50px, 30px) scale(1.15);
+    opacity: 0.3;
+  }
+  40% {
+    transform: translate(80px, -20px) scale(0.95);
+    opacity: 0.25;
+  }
+  60% {
+    transform: translate(40px, -60px) scale(1.1);
+    opacity: 0.2;
+  }
+  80% {
+    transform: translate(-30px, -30px) scale(0.9);
+    opacity: 0.15;
+  }
+}
+
+@keyframes particle-4 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.1;
+  }
+  25% {
+    transform: translate(-40px, -50px) scale(1.3) rotate(90deg);
+    opacity: 0.15;
+  }
+  50% {
+    transform: translate(-80px, 20px) scale(0.8) rotate(180deg);
+    opacity: 0.2;
+  }
+  75% {
+    transform: translate(-40px, 70px) scale(1.1) rotate(270deg);
+    opacity: 0.12;
+  }
+}
+
+@keyframes particle-5 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.25;
+  }
+  30% {
+    transform: translate(60px, -70px) scale(0.85);
+    opacity: 0.35;
+  }
+  60% {
+    transform: translate(-40px, -100px) scale(1.2);
+    opacity: 0.3;
+  }
+  90% {
+    transform: translate(20px, -50px) scale(0.95);
+    opacity: 0.28;
+  }
+}
+
+@keyframes particle-6 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.15;
+  }
+  40% {
+    transform: translate(-70px, -30px) scale(1.1) rotate(160deg);
+    opacity: 0.2;
+  }
+  80% {
+    transform: translate(50px, -60px) scale(0.9) rotate(320deg);
+    opacity: 0.18;
+  }
+}
+
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
   opacity: 0;
@@ -230,6 +346,30 @@ code {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
+}
+
+.animate-particle-1 {
+  animation: particle-1 20s ease-in-out infinite;
+}
+
+.animate-particle-2 {
+  animation: particle-2 25s ease-in-out infinite;
+}
+
+.animate-particle-3 {
+  animation: particle-3 22s ease-in-out infinite;
+}
+
+.animate-particle-4 {
+  animation: particle-4 30s ease-in-out infinite;
+}
+
+.animate-particle-5 {
+  animation: particle-5 18s ease-in-out infinite;
+}
+
+.animate-particle-6 {
+  animation: particle-6 24s ease-in-out infinite;
 }
 
 .animation-delay-0 {
