@@ -118,9 +118,11 @@ export const ProductDetailPage: React.FC = () => {
                 {product.awards.map((award, index) => (
                   <li
                     key={index}
-                    className="flex items-start gap-2 text-neutral-700 dark:text-neutral-300"
+                    className="flex items-center gap-2 text-neutral-700 dark:text-neutral-300"
                   >
-                    <span className="text-primary mt-1">•</span>
+                    <span className="text-primary dark:text-primary-foreground">
+                      •
+                    </span>
                     {award.link ? (
                       <a
                         href={award.link}
