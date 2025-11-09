@@ -4,6 +4,7 @@ import {
   IconMail,
   IconWorld,
 } from '@tabler/icons-react';
+import { useTranslation } from 'react-i18next';
 
 import { Layout } from '@/components';
 import {
@@ -13,7 +14,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { useTranslation } from '@/i18n';
 
 interface TeamMember {
   nameKo: string;
@@ -140,7 +140,8 @@ const teamMembers: TeamMember[] = [
 ];
 
 export const TeamMainPage: React.FC = () => {
-  const { t, lang } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language as 'en' | 'ko';
 
   const grouped = {
     leadership: teamMembers.filter((m) => m.department === 'leadership'),

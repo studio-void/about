@@ -1,8 +1,7 @@
 import { forwardRef } from 'react';
 
 import { Link } from '@tanstack/react-router';
-
-import { useTranslation } from '@/i18n';
+import { useTranslation } from 'react-i18next';
 
 export const Header = forwardRef<
   HTMLElementTagNameMap['header'],
@@ -19,7 +18,7 @@ export const Header = forwardRef<
         <Link to="/">
           <div className="flex font-extrabold text-xl tracking-tight gap-2 items-center">
             <img
-              src="public/android-chrome-512x512.png"
+              src="/android-chrome-512x512.png"
               alt="VO!D logo"
               className="w-6 h-6"
             />

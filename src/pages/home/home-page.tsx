@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { Button, Layout } from '@/components';
 import {
   Card,
@@ -6,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { useTranslation } from '@/i18n';
 
 export const HomePage: React.FC = () => {
   const { t } = useTranslation();
