@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
 
 import { Button, Layout } from '@/components';
@@ -40,22 +41,22 @@ export const HomePage: React.FC = () => {
           </p>
 
           <div className="flex items-center justify-center gap-4 animate-fade-in-up animation-delay-300">
-            <a href="/products" className="inline-block">
+            <Link to="/products" className="inline-block">
               <Button
                 variant="default"
                 className="px-6 py-3 hover:scale-105 transition-transform duration-300"
               >
                 {t('ourProducts')}
               </Button>
-            </a>
-            <a href="/team" className="inline-block">
+            </Link>
+            <Link to="/team" className="inline-block">
               <Button
                 variant="outline"
                 className="px-6 py-3 hover:scale-105 transition-transform duration-300"
               >
                 {t('team')}
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
