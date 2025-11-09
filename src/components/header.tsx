@@ -3,6 +3,8 @@ import { forwardRef } from 'react';
 import { Link } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
 
+import { ThemeToggle } from './theme-toggle';
+
 export const Header = forwardRef<
   HTMLElementTagNameMap['header'],
   React.HTMLAttributes<HTMLElementTagNameMap['header']>
@@ -12,7 +14,7 @@ export const Header = forwardRef<
   return (
     <header
       ref={ref}
-      className="p-4 flex items-center justify-between bg-background text-foreground border-b"
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-6xl px-6 py-3 flex items-center justify-between rounded-full backdrop-blur-xl bg-background/70 dark:bg-background/50 border border-border/50 shadow-lg"
     >
       <nav className="flex items-center gap-4">
         <Link to="/">
@@ -42,12 +44,7 @@ export const Header = forwardRef<
         >
           {t('team')}
         </Link>
-        <a
-          href="mailto:ceo@wevoid.com"
-          className="inline-block rounded-md bg-primary text-primary-foreground px-3 py-1.5 text-sm font-medium hover:opacity-90"
-        >
-          {t('invest')}
-        </a>
+        <ThemeToggle />
       </div>
     </header>
   );

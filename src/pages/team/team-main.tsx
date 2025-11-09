@@ -152,7 +152,7 @@ export const TeamMainPage: React.FC = () => {
   };
 
   return (
-    <Layout disableHeaderHeight>
+    <Layout>
       <div className="relative">
         {/* Background gradient animation */}
         <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 animate-gradient -z-10" />
@@ -165,7 +165,7 @@ export const TeamMainPage: React.FC = () => {
         </div>
 
         <div className="mx-auto max-w-5xl py-24 px-4 relative">
-          <header className="mb-8 animate-fade-in-up">
+          <header className="mb-8 animate-fade-in-up text-center">
             <h1 className="text-4xl font-extrabold">{t('teamVoids')}</h1>
             <p className="text-neutral-600 dark:text-neutral-400 mt-2">
               {t('teamIntro')}
@@ -174,7 +174,9 @@ export const TeamMainPage: React.FC = () => {
 
           {/* Leadership */}
           <section className="mb-12 animate-fade-in-up animation-delay-100">
-            <h2 className="text-2xl font-semibold mb-6">{t('leadership')}</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-center">
+              {t('leadership')}
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {grouped.leadership.map((m) => (
                 <MemberCard key={m.nameEn} member={m} lang={lang} />
@@ -184,7 +186,9 @@ export const TeamMainPage: React.FC = () => {
 
           {/* Engineering */}
           <section className="mb-12 animate-fade-in-up animation-delay-200">
-            <h2 className="text-2xl font-semibold mb-6">{t('engineering')}</h2>
+            <h2 className="text-2xl font-semibold mb-6 text-center">
+              {t('engineering')}
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {grouped.engineering.map((m) => (
                 <MemberCard key={m.nameEn} member={m} lang={lang} />
@@ -195,7 +199,7 @@ export const TeamMainPage: React.FC = () => {
           {/* Customer Experience */}
           {grouped.customerExperience.length > 0 && (
             <section className="mb-12 animate-fade-in-up animation-delay-300">
-              <h2 className="text-2xl font-semibold mb-6">
+              <h2 className="text-2xl font-semibold mb-6 text-center">
                 {t('customerExperience')}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -208,17 +212,17 @@ export const TeamMainPage: React.FC = () => {
 
           <Card className="animate-fade-in-up animation-delay-400">
             <CardHeader>
-              <CardTitle>{t('investorRelations')}</CardTitle>
+              <CardTitle>{t('contactUs')}</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-                {t('openToPartners')}
+                {t('contactUsDesc')}
               </p>
               <a
                 href="mailto:ceo@wevoid.com"
-                className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
+                className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2 dark:bg-neutral-800 dark:hover:bg-neutral-700"
               >
-                {t('requestDeck')}
+                {t('contact')}
               </a>
             </CardContent>
           </Card>

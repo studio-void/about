@@ -40,20 +40,20 @@ export const HomePage: React.FC = () => {
           </p>
 
           <div className="flex items-center justify-center gap-4 animate-fade-in-up animation-delay-300">
-            <a href="mailto:ceo@wevoid.com" className="inline-block">
+            <a href="/products" className="inline-block">
               <Button
                 variant="default"
                 className="px-6 py-3 hover:scale-105 transition-transform duration-300"
               >
-                {t('requestDeck')}
+                {t('ourProducts')}
               </Button>
             </a>
-            <a href="mailto:ceo@wevoid.com" className="inline-block">
+            <a href="/team" className="inline-block">
               <Button
                 variant="outline"
                 className="px-6 py-3 hover:scale-105 transition-transform duration-300"
               >
-                {t('contact')}
+                {t('team')}
               </Button>
             </a>
           </div>

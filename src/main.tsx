@@ -7,6 +7,7 @@ import { I18nextProvider } from 'react-i18next';
 
 import '@/styles.css';
 
+import { ThemeProvider } from './components/theme-provider';
 import i18n from './i18n';
 import { NotFoundPage } from './pages';
 import { routeTree } from './routeTree.gen';
@@ -35,11 +36,13 @@ if (rootElement && !rootElement.innerHTML) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <I18nextProvider i18n={i18n}>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </I18nextProvider>
+      <ThemeProvider defaultTheme="system" storageKey="void-ui-theme">
+        <I18nextProvider i18n={i18n}>
+          <QueryClientProvider client={queryClient}>
+            <RouterProvider router={router} />
+          </QueryClientProvider>
+        </I18nextProvider>
+      </ThemeProvider>
     </StrictMode>,
   );
 }

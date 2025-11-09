@@ -37,7 +37,7 @@ export const ProductsPage: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <Layout disableHeaderHeight>
+    <Layout>
       <div className="relative">
         {/* Background gradient animation */}
         <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 animate-gradient -z-10" />
@@ -50,7 +50,7 @@ export const ProductsPage: React.FC = () => {
         </div>
 
         <div className="mx-auto max-w-5xl py-24 px-4 relative">
-          <header className="mb-12 text-center animate-fade-in-up">
+          <header className="mb-12 animate-fade-in-up">
             <h1 className="text-4xl font-extrabold mb-4">{t('ourProducts')}</h1>
             <p className="text-neutral-600 dark:text-neutral-400 text-lg">
               {t('productsIntro')}

@@ -54,7 +54,7 @@ export const ProductDetailPage: React.FC = () => {
 
   if (!product) {
     return (
-      <Layout disableHeaderHeight>
+      <Layout>
         <div className="mx-auto max-w-5xl py-24 px-4 text-center">
           <h1 className="text-4xl font-extrabold mb-4">Product Not Found</h1>
           <p className="text-neutral-600 dark:text-neutral-400">
@@ -68,7 +68,7 @@ export const ProductDetailPage: React.FC = () => {
   const Logo = product.logo;
 
   return (
-    <Layout disableHeaderHeight>
+    <Layout>
       <div className="relative">
         {/* Background gradient animation */}
         <div className="fixed inset-0 bg-gradient-to-br from-neutral-50 via-neutral-100 to-neutral-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 animate-gradient -z-10" />
