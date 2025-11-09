@@ -1,6 +1,7 @@
 {
   "slogan": "From void, to !",
   "team": "팀",
+  "products": "프로덕트",
   "invest": "투자하기",
   "requestDeck": "투자 자료 요청",
   "contact": "문의하기",
@@ -19,5 +20,14 @@
   "teamIntro": "VO!D를 만드는 사람들 — 엔지니어, 디자이너, 전략가들이 함께 다음 세대의 감동적인 제품을 만듭니다.",
   "monthlyUsers": "월간 활성 사용자 (베타)",
   "organicGrowth": "론칭 이후 자연 성장률",
-  "coreTeam": "핵심 팀원 + 어드바이저"
+  "coreTeam": "핵심 팀원 + 어드바이저",
+  "ourProducts": "우리의 프로덕트",
+  "productsIntro": "탁월한 사용자 경험을 제공하기 위해 만들고 있는 혁신적인 솔루션들을 만나보세요.",
+  "visitWebsite": "웹사이트 방문",
+  "learnMore": "자세히 보기",
+  "igardenSlogan": "Personalized smart farm solution that you can learn with us",
+  "igardenDesc": "I_Garden은 누구나 농업을 시작할 수 있도록 돕는 AI 기반 스마트 파밍 플랫폼입니다. 맞춤형 가이드와 자동화된 관리 시스템으로 배우고, 키우고, 수확하세요.",
+  "awards": "수상 내역",
+  "award1": "대학원생 창업경진대회 특별상 (한국장학재단이사장)",
+  "award2": "호남IS해커톤 장려상 (제주산학융합원장)"
 }

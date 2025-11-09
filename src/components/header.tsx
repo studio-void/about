@@ -31,6 +31,12 @@ export const Header = forwardRef<
       </nav>
       <div className="flex items-center gap-4">
         <Link
+          to="/products"
+          className="text-sm text-neutral-600 dark:text-neutral-400 hover:underline"
+        >
+          {t('products')}
+        </Link>
+        <Link
           to="/team"
           className="text-sm text-neutral-600 dark:text-neutral-400 hover:underline"
         >
