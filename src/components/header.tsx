@@ -16,9 +16,16 @@ export const Header = forwardRef<
       className="p-4 flex items-center justify-between bg-background text-foreground border-b"
     >
       <nav className="flex items-center gap-4">
-        <div className="px-2 font-extrabold text-xl tracking-tight">
-          <Link to="/">VO!D</Link>
-        </div>
+        <Link to="/">
+          <div className="flex font-extrabold text-xl tracking-tight gap-2 items-center">
+            <img
+              src="public/android-chrome-512x512.png"
+              alt="VO!D logo"
+              className="w-6 h-6"
+            />
+            VO!D
+          </div>
+        </Link>
         <div className="text-sm text-neutral-600 dark:text-neutral-400">
           {t('slogan')}
         </div>

@@ -1,4 +1,11 @@
 import { Button, Layout } from '@/components';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { useTranslation } from '@/i18n';
 
 export const HomePage: React.FC = () => {
@@ -35,35 +42,45 @@ export const HomePage: React.FC = () => {
       <section className="py-16">
         <div className="mx-auto max-w-5xl px-4 space-y-12">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div className="p-6 border border-border rounded-lg text-center">
-              <h3 className="font-semibold mb-2">{t('traction')}</h3>
-              <p className="text-3xl font-bold">10k+</p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {t('monthlyUsers')}
-              </p>
-            </div>
-            <div className="p-6 border border-border rounded-lg text-center">
-              <h3 className="font-semibold mb-2">{t('growth')}</h3>
-              <p className="text-3xl font-bold">+28% MoM</p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {t('organicGrowth')}
-              </p>
-            </div>
-            <div className="p-6 border border-border rounded-lg text-center">
-              <h3 className="font-semibold mb-2">{t('teamCount')}</h3>
-              <p className="text-3xl font-bold">5</p>
-              <p className="text-sm text-neutral-600 dark:text-neutral-400">
-                {t('coreTeam')}
-              </p>
-            </div>
+            <Card>
+              <CardHeader>
+                <CardTitle>{t('traction')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-3xl font-bold">10k+</p>
+                <CardDescription>{t('monthlyUsers')}</CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>{t('growth')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-3xl font-bold">+28% MoM</p>
+                <CardDescription>{t('organicGrowth')}</CardDescription>
+              </CardContent>
+            </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>{t('teamCount')}</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-3xl font-bold">5</p>
+                <CardDescription>{t('coreTeam')}</CardDescription>
+              </CardContent>
+            </Card>
           </div>
 
-          <div className="p-6 border border-border rounded-lg">
-            <h3 className="font-semibold mb-4">{t('whyVoidTitle')}</h3>
-            <p className="text-neutral-700 dark:text-neutral-300">
-              {t('mission')}
-            </p>
-          </div>
+          <Card>
+            <CardHeader>
+              <CardTitle>{t('whyVoidTitle')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-neutral-700 dark:text-neutral-300">
+                {t('mission')}
+              </p>
+            </CardContent>
+          </Card>
         </div>
       </section>
     </Layout>

@@ -6,6 +6,13 @@ import {
 } from '@tabler/icons-react';
 
 import { Layout } from '@/components';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { useTranslation } from '@/i18n';
 
 interface TeamMember {
@@ -29,14 +36,14 @@ const teamMembers: TeamMember[] = [
     nameKo: '임정훈',
     nameEn: 'JeongHoon Lim',
     titleKo: '대표',
-    titleEn: 'CEO',
+    titleEn: 'CEO & Founder',
     department: 'leadership',
     rolesKo: ['PM', '기획', 'IR/PR', 'DevOps', 'FE'],
     rolesEn: ['PM', 'Planning', 'IR/PR', 'DevOps', 'FE'],
     descKo:
       '제품 전략과 투자 유치를 이끌며, 프론트엔드와 데브옵스까지 넓은 영역을 커버합니다. 팀의 비전과 실행을 연결하는 역할을 합니다.',
     descEn:
-      'Leads product strategy and fundraising, covering everything from frontend to DevOps. Connects team vision with execution.',
+      'Leads the overall team vision, product strategy, and investor relations, covering a wide range from frontend to DevOps.',
     email: 'ceo@wevoid.com',
     github: 'https://github.com/hoony6134',
     website: 'https://me.scian.xyz',
@@ -46,7 +53,7 @@ const teamMembers: TeamMember[] = [
     nameKo: '최재원',
     nameEn: 'Charles Choi',
     titleKo: '부대표',
-    titleEn: 'VP',
+    titleEn: 'Vice President',
     department: 'leadership',
     rolesKo: ['기획', 'IR/PR', '마케팅'],
     rolesEn: ['Planning', 'IR/PR', 'Marketing'],
@@ -67,7 +74,7 @@ const teamMembers: TeamMember[] = [
     descKo:
       '풀스택 개발과 시스템 아키텍처를 설계하며, 디자인 시스템까지 직접 구현합니다. 기술팀의 방향성을 제시합니다.',
     descEn:
-      'Designs full-stack architecture and implements design systems. Sets technical direction for the engineering team.',
+      'Designs full-stack architecture and implements design systems. Sets technical direction for the entire engineering team.',
     email: 'rhseungg@wevoid.com',
     github: 'https://github.com/rhseung',
     website: 'https://rhseung.me',
@@ -84,7 +91,7 @@ const teamMembers: TeamMember[] = [
     descKo:
       '사용자 경험 설계와 프론트엔드 구현을 주도하며, 제품의 첫인상을 만듭니다. 고객의 목소리를 제품에 반영합니다.',
     descEn:
-      'Leads UX design and frontend implementation, crafting the first impression of products. Translates customer voice into features.',
+      'Leads UX design and frontend implementation, crafting the first impression of products.',
     email: 'yetwin05@gm.gist.ac.kr',
   },
   {
@@ -187,20 +194,22 @@ export const TeamMainPage: React.FC = () => {
           </section>
         )}
 
-        <section className="p-6 border border-border rounded-lg">
-          <h2 className="text-xl font-semibold mb-3">
-            {t('investorRelations')}
-          </h2>
-          <p className="text-neutral-700 dark:text-neutral-300 mb-4">
-            {t('openToPartners')}
-          </p>
-          <a
-            href="mailto:ceo@wevoid.com"
-            className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
-          >
-            {t('requestDeck')}
-          </a>
-        </section>
+        <Card>
+          <CardHeader>
+            <CardTitle>{t('investorRelations')}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-neutral-700 dark:text-neutral-300 mb-4">
+              {t('openToPartners')}
+            </p>
+            <a
+              href="mailto:ceo@wevoid.com"
+              className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2"
+            >
+              {t('requestDeck')}
+            </a>
+          </CardContent>
+        </Card>
       </div>
     </Layout>
   );
@@ -216,73 +225,72 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
   const desc = lang === 'ko' ? member.descKo : member.descEn;
 
   return (
-    <div className="p-6 border border-border rounded-lg">
-      <div className="mb-3">
-        <h3 className="font-semibold text-lg">{name}</h3>
-        <p className="text-sm text-neutral-600 dark:text-neutral-400">
-          {title}
+    <Card>
+      <CardHeader>
+        <CardTitle>{name}</CardTitle>
+        <CardDescription>{title}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <div className="flex flex-wrap gap-2 mb-3">
+          {roles.map((role) => (
+            <span
+              key={role}
+              className="inline-block px-2 py-0.5 text-xs rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
+            >
+              {role}
+            </span>
+          ))}
+        </div>
+
+        <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
+          {desc}
         </p>
-      </div>
 
-      <div className="flex flex-wrap gap-2 mb-3">
-        {roles.map((role) => (
-          <span
-            key={role}
-            className="inline-block px-2 py-0.5 text-xs rounded-md bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300"
-          >
-            {role}
-          </span>
-        ))}
-      </div>
-
-      <p className="text-sm text-neutral-700 dark:text-neutral-300 mb-3">
-        {desc}
-      </p>
-
-      <div className="flex items-center gap-3">
-        {member.email && (
-          <a
-            href={`mailto:${member.email}`}
-            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
-            aria-label="Email"
-          >
-            <IconMail size={20} />
-          </a>
-        )}
-        {member.github && (
-          <a
-            href={member.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
-            aria-label="GitHub"
-          >
-            <IconBrandGithub size={20} />
-          </a>
-        )}
-        {member.linkedin && (
-          <a
-            href={member.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
-            aria-label="LinkedIn"
-          >
-            <IconBrandLinkedin size={20} />
-          </a>
-        )}
-        {member.website && (
-          <a
-            href={member.website}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
-            aria-label="Website"
-          >
-            <IconWorld size={20} />
-          </a>
-        )}
-      </div>
-    </div>
+        <div className="flex items-center gap-3">
+          {member.email && (
+            <a
+              href={`mailto:${member.email}`}
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              aria-label="Email"
+            >
+              <IconMail size={20} />
+            </a>
+          )}
+          {member.github && (
+            <a
+              href={member.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              aria-label="GitHub"
+            >
+              <IconBrandGithub size={20} />
+            </a>
+          )}
+          {member.linkedin && (
+            <a
+              href={member.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              aria-label="LinkedIn"
+            >
+              <IconBrandLinkedin size={20} />
+            </a>
+          )}
+          {member.website && (
+            <a
+              href={member.website}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              aria-label="Website"
+            >
+              <IconWorld size={20} />
+            </a>
+          )}
+        </div>
+      </CardContent>
+    </Card>
   );
 };
