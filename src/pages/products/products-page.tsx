@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router';
 import { useTranslation } from 'react-i18next';
 
 import { Button, Layout } from '@/components';
+import { CodicueLogo } from '@/components/codicue-logo';
 import { IgardenLogo } from '@/components/igarden-logo';
 import {
   Card,
@@ -16,7 +17,7 @@ interface Product {
   name: string;
   sloganKey: string;
   descKey: string;
-  website: string;
+  website?: string;
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   color: string;
 }
@@ -30,6 +31,14 @@ const products: Product[] = [
     website: 'https://shimter.wevoid.com',
     logo: IgardenLogo,
     color: '#3EC893',
+  },
+  {
+    id: 'codicue',
+    name: 'CodiCue',
+    sloganKey: 'codicueSlogan',
+    descKey: 'codicueDesc',
+    logo: CodicueLogo,
+    color: '#C83E81',
   },
 ];
 
@@ -82,13 +91,15 @@ export const ProductsPage: React.FC = () => {
                       {t(product.descKey)}
                     </p>
                     <div className="flex gap-3">
-                      <a
-                        href={product.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Button variant="default">{t('visitWebsite')}</Button>
-                      </a>
+                      {product.website && (
+                        <a
+                          href={product.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Button variant="default">{t('visitWebsite')}</Button>
+                        </a>
+                      )}
                       <Link
                         to="/product/$projectId"
                         params={{ projectId: product.id }}
