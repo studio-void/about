@@ -27,9 +27,9 @@ export const Header = forwardRef<
             VO!D
           </div>
         </Link>
-        <div className="text-sm text-neutral-600 dark:text-neutral-400">
+        {/* <div className="text-sm text-neutral-600 dark:text-neutral-400">
           {t('slogan')}
-        </div>
+        </div> */}
       </nav>
       <div className="flex items-center gap-4">
         <Link
