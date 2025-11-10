@@ -267,7 +267,7 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
           {member.email && (
             <a
               href={`mailto:${member.email}`}
-              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
               aria-label="Email"
             >
               <IconMail size={20} />
@@ -278,7 +278,7 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
               href={member.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
               aria-label="GitHub"
             >
               <IconBrandGithub size={20} />
@@ -289,7 +289,7 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
               href={member.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
               aria-label="LinkedIn"
             >
               <IconBrandLinkedin size={20} />
@@ -300,7 +300,7 @@ const MemberCard: React.FC<{ member: TeamMember; lang: 'en' | 'ko' }> = ({
               href={member.website}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
               aria-label="Website"
             >
               <IconWorld size={20} />
