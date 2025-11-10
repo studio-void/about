@@ -1,6 +1,4 @@
-export const CodicueLogo: React.FC<React.SVGProps<SVGSVGElement>> = (
-  props,
-) => (
+export const CodicueLogo: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg
     width="121"
     height="28"
