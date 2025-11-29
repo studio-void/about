@@ -41,6 +41,14 @@ const productDetails: Record<string, ProductDetail> = {
         titleKey: 'award2',
         link: undefined,
       },
+      {
+        titleKey: 'award4',
+        link: undefined,
+      },
+      {
+        titleKey: 'award5',
+        link: undefined,
+      },
     ],
   },
   codicue: {
