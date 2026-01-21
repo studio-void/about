@@ -9,11 +9,18 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as ProductsRouteImport } from './routes/products'
+import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProductProjectIdRouteImport } from './routes/product/$projectId'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const TeamRoute = TeamRouteImport.update({
   id: '/team',
   path: '/team',
@@ -22,6 +29,11 @@ const TeamRoute = TeamRouteImport.update({
 const ProductsRoute = ProductsRouteImport.update({
   id: '/products',
   path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
+  id: '/privacy-policy',
+  path: '/privacy-policy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -37,40 +49,74 @@ const ProductProjectIdRoute = ProductProjectIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/product/$projectId': typeof ProductProjectIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/product/$projectId': typeof ProductProjectIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/privacy-policy': typeof PrivacyPolicyRoute
   '/products': typeof ProductsRoute
   '/team': typeof TeamRoute
+  '/terms': typeof TermsRoute
   '/product/$projectId': typeof ProductProjectIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/products' | '/team' | '/product/$projectId'
+  fullPaths:
+    | '/'
+    | '/privacy-policy'
+    | '/products'
+    | '/team'
+    | '/terms'
+    | '/product/$projectId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/products' | '/team' | '/product/$projectId'
-  id: '__root__' | '/' | '/products' | '/team' | '/product/$projectId'
+  to:
+    | '/'
+    | '/privacy-policy'
+    | '/products'
+    | '/team'
+    | '/terms'
+    | '/product/$projectId'
+  id:
+    | '__root__'
+    | '/'
+    | '/privacy-policy'
+    | '/products'
+    | '/team'
+    | '/terms'
+    | '/product/$projectId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   ProductsRoute: typeof ProductsRoute
   TeamRoute: typeof TeamRoute
+  TermsRoute: typeof TermsRoute
   ProductProjectIdRoute: typeof ProductProjectIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/team': {
       id: '/team'
       path: '/team'
@@ -83,6 +129,13 @@ declare module '@tanstack/react-router' {
       path: '/products'
       fullPath: '/products'
       preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy-policy': {
+      id: '/privacy-policy'
+      path: '/privacy-policy'
+      fullPath: '/privacy-policy'
+      preLoaderRoute: typeof PrivacyPolicyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -104,8 +157,10 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivacyPolicyRoute: PrivacyPolicyRoute,
   ProductsRoute: ProductsRoute,
   TeamRoute: TeamRoute,
+  TermsRoute: TermsRoute,
   ProductProjectIdRoute: ProductProjectIdRoute,
 }
 export const routeTree = rootRouteImport
