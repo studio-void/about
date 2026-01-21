@@ -16,13 +16,19 @@ export const Footer: React.FC = () => {
                 © {new Date().getFullYear()} VO!D. All rights reserved.
               </p>
             </div>
-            
+
             <nav className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap">
-              <Link 
+              <Link
                 to="/privacy-policy"
                 className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors duration-200"
               >
                 Privacy Policy
+              </Link>
+              <Link
+                to="/terms"
+                className="text-sm text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors duration-200"
+              >
+                Terms of Service
               </Link>
             </nav>
 
