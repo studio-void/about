@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Layout } from '@/components';
 import { CodicueLogo } from '@/components/codicue-logo';
 import { IgardenLogo } from '@/components/igarden-logo';
+import { MyttLogo } from '@/components/mytt-logo';
 import {
   Card,
   CardContent,
@@ -19,7 +20,8 @@ interface Product {
   descKey: string;
   website?: string;
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  color: string;
+  color?: string;
+  logoClassName?: string;
 }
 
 const products: Product[] = [
@@ -39,6 +41,15 @@ const products: Product[] = [
     descKey: 'codicueDesc',
     logo: CodicueLogo,
     color: '#C83E81',
+  },
+  {
+    id: 'mytt',
+    name: 'MyTT',
+    sloganKey: 'myttSlogan',
+    descKey: 'myttDesc',
+    website: 'https://mytt.wevoid.com/',
+    logo: MyttLogo,
+    logoClassName: 'text-black dark:text-white',
   },
 ];
 
@@ -77,8 +88,10 @@ export const ProductsPage: React.FC = () => {
                   <CardHeader>
                     <div className="mb-4">
                       <Logo
-                        className="h-16 w-auto"
-                        style={{ color: product.color }}
+                        className={`h-16 w-auto ${product.logoClassName ?? ''}`}
+                        style={
+                          product.color ? { color: product.color } : undefined
+                        }
                       />
                     </div>
                     <CardTitle className="text-2xl">{product.name}</CardTitle>

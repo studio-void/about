@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Layout } from '@/components';
 import { CodicueLogo } from '@/components/codicue-logo';
 import { IgardenLogo } from '@/components/igarden-logo';
+import { MyttLogo } from '@/components/mytt-logo';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 interface Award {
@@ -19,7 +20,8 @@ interface ProductDetail {
   descKey: string;
   website?: string;
   logo: React.ComponentType<React.SVGProps<SVGSVGElement>>;
-  color: string;
+  color?: string;
+  logoClassName?: string;
   awards: Award[];
 }
 
@@ -65,6 +67,16 @@ const productDetails: Record<string, ProductDetail> = {
       },
     ],
   },
+  mytt: {
+    id: 'mytt',
+    name: 'MyTT',
+    sloganKey: 'myttSlogan',
+    descKey: 'myttDesc',
+    website: 'https://mytt.wevoid.com/',
+    logo: MyttLogo,
+    logoClassName: 'text-black dark:text-white',
+    awards: [],
+  },
 };
 
 export const ProductDetailPage: React.FC = () => {
@@ -106,8 +118,8 @@ export const ProductDetailPage: React.FC = () => {
         <div className="mx-auto max-w-5xl py-24 px-4 relative">
           <div className="mb-8 animate-fade-in-up">
             <Logo
-              className="h-20 w-auto mb-6"
-              style={{ color: product.color }}
+              className={`h-20 w-auto mb-6 ${product.logoClassName ?? ''}`}
+              style={product.color ? { color: product.color } : undefined}
             />
             <h1 className="text-4xl font-extrabold mb-3">{product.name}</h1>
             <p className="text-xl text-neutral-600 dark:text-neutral-400 mb-6">
