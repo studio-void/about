@@ -218,12 +218,33 @@ export const TeamMainPage: React.FC = () => {
               <p className="text-neutral-700 dark:text-neutral-300 mb-4">
                 {t('contactUsDesc')}
               </p>
-              <a
-                href="mailto:ceo@wevoid.com"
-                className="inline-block rounded-md bg-primary text-primary-foreground px-4 py-2 dark:bg-neutral-800 dark:hover:bg-neutral-700"
-              >
-                {t('contact')}
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="mailto:ceo@wevoid.com"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
+                  aria-label="Email"
+                >
+                  <IconMail size={22} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/wevoid"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <IconBrandLinkedin size={22} />
+                </a>
+                <a
+                  href="https://github.com/studio-void"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-neutral-600 dark:text-neutral-400 hover:text-foreground hover:scale-110 transition-all duration-200"
+                  aria-label="GitHub"
+                >
+                  <IconBrandGithub size={22} />
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>
